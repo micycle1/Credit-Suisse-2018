@@ -1,0 +1,24 @@
+Question 4 - Selection of Failed Tradedesks
+Task
+It is not uncommon for systems to fail, that includes any systems in a bank.
+This morning there has been a an incident with VMs on the trading floor. It is imperative that these systems are back up as soon as possible in order to prevent financial damage to the bank.
+You have been assigned a task of bringing the VMs back up in various sections of the trading floor.
+Since time is an important factor in electronic trading, you should prioritize machines that take less time to be fixed. In this particular scenario traders work in teams, so you must fix the specified number of consecutive systems on a row.
+For the sake of the question, each machine that requires fixing has been assigned an approximate fix time to it. Machines that were not damaged are marked with X.
+You will be given the input in a form of 2D matrix (or an array of arrays if you wish) and a number of machines that need to be fixed consecutively in order to come back to the exchange quickly and complete the trade.
+You should return the smallest time needed to fix the specified number of consecutive machines. If it is not possible to fix that many machines next to each other, your solution should return 0.
+Constraints
+You should be expecting the number of systems to be fixed consecutively to be smaller or equal to the number of traders per row. Both of these numbers should not exceed 100.
+Examples
+Example 1
+input: [12, 12, 3, X, 3] [23, X, X, X, 3] [33, 21, X, X, X] [9, 12, 3, X, X] [X, X, X, 4, 5], 3 output: 24
+
+This is the 4th row with 9, 12 and 3 being times required to fix consecutive systems.
+Example 2
+input: [X, X, 2] [2, 3, X] [X, 3, 2], 3 output: 0
+
+You should return 0 since it is not possible to fix these systems consecutively.
+Example 3
+input: [2, 3, X, 2] [4, X, X, 4] [3, 2, X, X] [X, X, X, 5], 2 output: 5
+
+It should not matter that there is more than one combination, since only the minimum time is required as an output.

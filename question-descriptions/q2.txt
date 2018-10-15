@@ -1,0 +1,36 @@
+Question 2 - Equally Balanced Cash Flow
+Task
+Compliance and auditing is an important part of Credit Suisse and other bank's responsibilities in the market. One potential requirement is that cashflow should be kept as constant as possible in a system to ensure risk calculations are more reliable, large fluctuations in holdings in a particular system could cause issues.
+In the following question, you are given two sets of trades that need to be settled and must go through the system you're controlling. The first set cashflow_in contains all the trades that are yet to be settled and could be brought onto the system. The second set cashflow_out are trades that have been settled and should now be taked off your system.
+By selecting a subset of trades from cashflow_in and a different subset of trades from cashflow_out that have equal total value (adding up all the values of trades in each subset), you're able to keep the holdings in your system the same. Therefore you must devise an algorithm that picks the best subset from each set, such that the difference in total value between the two subsets is as small as possible and returns this smallest possible positive difference.
+Constraints
+The only constraint you have is that at least one subset must be non-empty. Your input will be the arrays cashflow_in = [p1, p2, ... , pN-1, pN] where 1 ≤ N ≤ 1000 and cashflow_out = [q1, q2, ... , qM-1, qM] where 1 ≤ M ≥ 1000 and for each element we have 1 ≤ pi,qj ≤ 100 for all pi,qj
+
+Examples
+Example 1
+cashflow_in = [66, 293, 215, 188, 147, 326, 449, 162, 46, 350]
+cashflow_out = [170, 153, 305, 290, 187]
+
+input: (cashflow_in, cashflow_out)
+output: 0
+
+If we consider the subset [449, 66, 147] of cashflow_in with a total value of 662 and the subset [170, 187, 305] of cashflow_out with sum 662, then we have a positive difference of 0
+
+Example 2
+cashflow_in = [189, 28]
+cashflow_out = [43, 267, 112, 166]
+
+input: (cashflow_in, cashflow_out)
+output: 8
+
+If we consider the subset [189, 28] of cashflow_in with a total value of 217 and the subset [43, 166] of cashflow_out with sum 209, then we have a positive difference of 217-209=8. This is the smallest possible positive difference between the two possible subsets we could select.
+Example 3
+cashflow_in = [72, 24, 73, 4, 28, 56, 1, 43]
+cashflow_out = [27]
+
+input: (cashflow_in, cashflow_out)
+output: 1
+
+If we consider the subset [] of cashflow_in with a total value of 0 and the subset [1] of cashflow_out with sum 1, then we have a positive difference of 1. Remember that we can't have two empty subsets, but in this case, the smallest positive difference between the subsets is to pick only 1 from cashflow_out array.
+Approach
+Once again, there does exist the trivial solution of checking every possible combinations of subsets from each array. However, this will have a time complexity of O(2N2M). It is possible to find a solution that has a time complexity

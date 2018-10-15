@@ -1,0 +1,12 @@
+Question 6 - Connect to Server with Shortest Route
+Task
+In finance, systems with low latencies are vital to the business. Thus, efficient data transfer algorithms need to be used.
+Here at Credit Suisse, we have n servers, numbered as 0, 1, 2…, n-1; All nodes are connected to each other. However, due to the location and hardware constraints of the servers, the time span t for the data to reach one node from another could be very large. Therefore, you need to work out an algorithm that determines the shortest route between server 0 to any target server k, in order to save time.
+Your output should return the time taken to reach the target server from server 0 in shortest route.
+Constraints
+You can assume that no negative weight is given for the route between the servers
+Examples
+Example 1
+input: [3,1,[[0,7,4],[7,0,2],[4,2,0]] output: 6
+
+For input, the first number tells you how many server there are and the second number is the target server. Then each row of the 2-D array represents the time taken to connect from that server to every other server. E.g. [0,7,4] shows the time for server 0 -> 0 = 0s, server 0 -> 1 = 7s, server 0 -> 2 = 4s. Hence the shortest path to get to server 1 from server 0 is 0->2->1 and the path adds up to 6s.

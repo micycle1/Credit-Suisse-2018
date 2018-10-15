@@ -1,0 +1,34 @@
+Question 3 - Lowest Exposure to the Exchanges
+Task
+Suppose we have a series of n exchanges. Then for any given pair of exchanges, there may exist a relationship between these that share information. Therefore for any n exchanges, we have m pairs (u,v), where u and v are one of these n exchanges.
+Suppose we want to select a subset Traded Exchanges of Exchanges to trade with. In Electronic Trading, it is important not to give away your trading intentions, therefore there are various techniques to obscure the amount of trade you're trying to make. We can't trade with two exchanges that share a relationship, otherwise they could potentially combine the knowledge of both trades and determine what our strategy was. Similarly, we want to reduce the number of exchanges that were not traded with and had a direct relationship with another exchange.
+Therefore, considering the fact that we have Traded Exchanges as a subset of Exchanges, look at the following constraints:
+For each pair of traded exchanges in Traded Exchanges, there must not be a relationship between these exchanges
+For each traded exchange, we calculate the value of this as 1
+For each non-traded exchange that has a direct relationship with a traded exchange, we value this as -1
+Therefore we want to maximise the total trade value, which is calculated as the sum of the value of every exchange in Exchanges. Basically we want to maximise the number of exchanges that do not have a relationship with multiple other exchanges.
+For this question, you will be given a N, the number of exchanges, with an edge list of M edges. (Note that edges will be 1-indexed)
+You must output the maximum value of X-Y such that X is the number of traded exchanges and Y is the number of non-traded exchanges that have a direct relationship to a traded exchange.
+Constraints
+Examples
+Example 1
+numnodes = 3
+edgelist = [(1, 2), (2, 3)] 
+input = (numnodes, edgelist)
+output = 1
+
+In this case, the maximum value of X-Y is obtained by selecting the set of Traded Exchanges = {1,3} (Exchange 1 and Exchange 3). Therefore we have X = 2. Exchange 2 has a direct relationship with both Exchange 1 and 3, therefore we have Y = 1, giving the final output of 2 - 1 = 1.
+Example 2
+numnodes = 5
+edgelist = [(1, 2), (1, 3), (1, 4), (1, 5)] 
+input = (numnodes, edgelist)
+output = 3
+
+In this case, the maximum value of X-Y is obtained by selecting the set of Traded Exchanges = {2, 3, 4, 5}. Therefore we have X = 4. Exchange 1 has a direct relationship with both Exchange 1 and 3, therefore we have Y = 1, giving the final output of 4 - 1 = 3.
+Example 3
+numnodes = 5
+edgelist = [(1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5)] 
+input = (numnodes, edgelist)
+output = 1
+
+In this case, the maximum value of X-Y is obtained by selecting the set of Traded Exchanges = {3, 4, 5}. Therefore we have *X = 3. Both Exchange 1 and 2 have a direct relationship with Exchanges 3, 4 and 5, therefore we have Y = 2, giving the final output of 3 - 2 = 1.
