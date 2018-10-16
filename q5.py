@@ -1,3 +1,5 @@
+import sys
+
 def question05(allowedAllocations, totalValue):
     table = [0] #base
     for i in range(totalValue):
