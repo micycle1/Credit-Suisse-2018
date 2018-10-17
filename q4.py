@@ -7,7 +7,7 @@ def question04(rows, numberMachines):
   for i, row in enumerate(rows):
     temp = []
     for k, symbol in enumerate(row):
-      if symbol != 'X':
+      if isinstance(symbol, int) :
         temp.append(symbol)
       else:
         if len(temp) >= numberMachines:
